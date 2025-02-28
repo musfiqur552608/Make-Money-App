@@ -14,7 +14,7 @@ Make Money App is a Flutter application designed to help users manage their bank
 
 ## Screenshots
 
-![Screenshot 1](aseets/images/appss.png)
+![Screenshot](assets/images/appss.png)
 
 ## Getting Started
 
