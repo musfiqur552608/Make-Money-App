@@ -4,8 +4,21 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double bankBalance = 0;
+  void addMoney(){
+    bankBalance += 500;
+    setState(() {
+      bankBalance;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +38,11 @@ class MyApp extends StatelessWidget {
                 flex: 9,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("Bank Balance"),
+                  children: [
+                    Text("Bank Balance"),
                     SizedBox(height: 20),
-                    Text("\$ 1000")],
+                    Text("$bankBalance"),
+                  ],
                 ),
               ),
               Expanded(
@@ -37,9 +52,7 @@ class MyApp extends StatelessWidget {
                     backgroundColor: Colors.red[700],
                     minimumSize: Size(double.infinity, 0),
                   ),
-                  onPressed: () {
-                    print("Button Clicked");
-                  },
+                  onPressed: addMoney,
                   child: Text("Click Here"),
                 ),
               ),
