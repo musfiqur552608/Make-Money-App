@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:makemoneyapp/add_money_btn.dart';
+import 'package:makemoneyapp/bank_balance.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -24,6 +26,11 @@ class _MyAppState extends State<MyApp> {
 
     await prefs.setDouble('decimal', bankBalance);
   }
+  @override
+  void initState() {
+    loadBalance();
+    super.initState();
+  }
 
   void loadBalance() async{
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -46,29 +53,8 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                flex: 9,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Bank Balance"),
-                    SizedBox(height: 20),
-                    Text("$bankBalance"),
-                    OutlinedButton(onPressed: loadBalance, child: Text("Load Balance")),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red[700],
-                    minimumSize: Size(double.infinity, 0),
-                  ),
-                  onPressed: addMoney,
-                  child: Text("Click Here"),
-                ),
-              ),
+              BankBalance(bankBalance: bankBalance),
+              AddMoneyBtn(addMoney: addMoney),
             ],
           ),
         ),
