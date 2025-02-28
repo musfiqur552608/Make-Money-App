@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class BankBalance extends StatelessWidget {
   double bankBalance;
+
   BankBalance({super.key, required this.bankBalance});
 
   @override
@@ -13,7 +15,10 @@ class BankBalance extends StatelessWidget {
         children: [
           Text("Bank Balance"),
           SizedBox(height: 20),
-          Text("$bankBalance"),
+          Text(
+            "${NumberFormat.simpleCurrency().format(bankBalance)}",
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
