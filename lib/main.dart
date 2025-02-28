@@ -10,8 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Make Money App'),
         ),
         body: Center(
