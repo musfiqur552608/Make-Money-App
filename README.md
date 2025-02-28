@@ -1,17 +1,31 @@
-# makemoneyapp
+# Make Money App
 
 A new Flutter project.
 
+## Description
+
+Make Money App is a Flutter application designed to help users manage their bank balance and improve their financial habits.
+
+## Features
+
+- Display bank balance
+- Persistent storage for bank balance
+- Improved UI layout
+
+## Screenshots
+
+![Screenshot 1](aseets/images/appss.png)
+
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK: ^3.7.0
+- Dart SDK: ^3.7.0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Make-Money-App
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/makemoneyapp.git
+    ```
